@@ -4,14 +4,30 @@ services:
         image: wildfly/master
         ports: 
             - 9990:9990
+        networks:
+            cluster:
+                ipv4_address: 192.168.1.10           
     load-balancer:
         image: wildfly/load-balancer
+        ports: 
+            - 8080:8080
         depends_on: 
             - master
+        networks:
+            cluster:
+                ipv4_address: 192.168.1.11           
     node1:
         image: wildfly/node1
         depends_on: 
             - master
             - load-balancer
-        
+        networks:
+            cluster:
+                ipv4_address: 192.168.1.12
+networks:
+    cluster:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 192.168.1.0/24 
     
