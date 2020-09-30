@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
-<host xmlns="urn:jboss:domain:13.0" name="node1">
+<host xmlns="urn:jboss:domain:13.0">
     <extensions>
         <extension module="org.jboss.as.jmx"/>
         <extension module="org.wildfly.extension.core-management"/>
@@ -87,9 +87,7 @@
             </jvm-options>
         </jvm>
     </jvms>
-    <servers>
-        <server name="server-one" group="main"/>
-    </servers>
+    <servers/>
     <profile>
         <subsystem xmlns="urn:jboss:domain:core-management:1.0"/>
         <subsystem xmlns="urn:wildfly:elytron:10.0" final-providers="combined-providers" disallowed-providers="OracleUcrypto">

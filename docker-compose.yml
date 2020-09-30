@@ -17,13 +17,27 @@ services:
             cluster:
                 ipv4_address: 192.168.1.11           
     node1:
-        image: wildfly/node1
+        image: wildfly/node
         depends_on: 
             - master
             - load-balancer
         networks:
             cluster:
                 ipv4_address: 192.168.1.12
+        environment: 
+            - MASTER_IP=192.168.1.10
+            - NODE_IP=192.168.1.12
+    node2:
+        image: wildfly/node
+        depends_on: 
+            - master
+            - load-balancer
+        networks:
+            cluster:
+                ipv4_address: 192.168.1.13
+        environment: 
+            - MASTER_IP=192.168.1.10
+            - NODE_IP=192.168.1.13        
 networks:
     cluster:
         driver: bridge
