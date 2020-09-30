@@ -1,12 +1,17 @@
 version: '3'
 services: 
     master:
-        image: wildfly-master
+        image: wildfly/master
         ports: 
             - 9990:9990
-    node1:
-        image: wildfly-node1
+    load-balancer:
+        image: wildfly/load-balancer
         depends_on: 
             - master
+    node1:
+        image: wildfly/node1
+        depends_on: 
+            - master
+            - load-balancer
         
     

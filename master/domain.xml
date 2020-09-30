@@ -1889,7 +1889,7 @@
             <socket-binding name="http" port="${jboss.http.port:8080}"/>
             <socket-binding name="https" port="${jboss.https.port:8443}"/>
             <socket-binding name="mcmp-management" interface="private" port="${jboss.mcmp.port:8090}"/>
-            <socket-binding name="modcluster" interface="private" multicast-address="${jboss.modcluster.multicast.address:224.0.1.105}" multicast-port="23364"/>
+            <socket-binding name="modcluster" interface="public" multicast-address="${jboss.modcluster.multicast.address:224.0.1.105}" multicast-port="23364"/>
         </socket-binding-group>
     </socket-binding-groups>
     <server-groups>
@@ -1898,6 +1898,9 @@
                 <heap size="64m" max-size="512m"/>
             </jvm>
             <socket-binding-group ref="full-ha-sockets"/>
+        </server-group>
+        <server-group name="load-balancers" profile="load-balancer">
+            <socket-binding-group ref="load-balancer-sockets"/>
         </server-group>
     </server-groups>
     <host-excludes>
