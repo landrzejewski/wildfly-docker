@@ -8,7 +8,7 @@ services:
             cluster:
                 ipv4_address: 192.168.1.10     
         volumes: 
-            - ./data/master:/opt/jboss/wildfly/domain/configuration
+            - ./data/master:/opt/jboss/wildfly/domain
                
     load-balancer:
         image: wildfly/load-balancer
@@ -31,7 +31,7 @@ services:
             - MASTER_IP=192.168.1.10
             - NODE_IP=192.168.1.12
         volumes: 
-            - ./data/node1:/opt/jboss/wildfly/domain/configuration        
+            - ./data/node1:/opt/jboss/wildfly/domain      
     node2:
         image: wildfly/node
         depends_on: 
@@ -44,7 +44,7 @@ services:
             - MASTER_IP=192.168.1.10
             - NODE_IP=192.168.1.13      
         volumes: 
-            - ./data/node2:/opt/jboss/wildfly/domain/configuration      
+            - ./data/node2:/opt/jboss/wildfly/domain
 networks:
     cluster:
         driver: bridge

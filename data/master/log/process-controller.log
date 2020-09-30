@@ -1,0 +1,7 @@
+2020-09-30 13:11:57,418 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2020-09-30 13:11:58,678 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2020-09-30 13:11:58,770 INFO  [org.jboss.as.process.Host Controller.status] (main) WFLYPC0018: Starting process 'Host Controller'
+2020-09-30 13:12:55,110 INFO  [org.jboss.as.process] (Shutdown thread) WFLYPC0017: Shutting down process controller
+2020-09-30 13:12:55,120 INFO  [org.jboss.as.process.Host Controller.status] (Shutdown thread) WFLYPC0019: Stopping process 'Host Controller'
+2020-09-30 13:12:55,237 INFO  [org.jboss.as.process.Host Controller.status] (reaper for Host Controller) WFLYPC0011: Process 'Host Controller' finished with an exit status of 0
+2020-09-30 13:12:55,240 INFO  [org.jboss.as.process] (Shutdown thread) WFLYPC0016: All processes finished; exiting
